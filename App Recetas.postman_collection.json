@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "96413785-fd4f-47c4-9661-8845f4cad1ef",
+		"name": "App Recetas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30544166",
+		"_collection_link": "https://ti-estadias.postman.co/workspace/TI-Estadias-Workspace~5feac32c-b671-4fe7-8f70-c760cfbc8af2/collection/30544166-96413785-fd4f-47c4-9661-8845f4cad1ef?action=share&source=collection_link&creator=30544166"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Carlos",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Romero",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "8@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "contrasenia1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/user/registrar",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "correo",
+									"value": "8@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "contrasenia1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/user/login",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "correo",
+									"value": "8@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "contrasenia1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/user/logout",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "Dar Like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|mVl0thkefBkJtbhKI1ZzoVmWHQddiZ7fsNGypDGP29bb83c3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "receta_id",
+									"value": "636359",
+									"type": "text"
+								},
+								{
+									"key": "titulo_receta",
+									"value": "Brussel Sprouts in Bacon and Garlic Sauce",
+									"type": "text"
+								},
+								{
+									"key": "imagen_url",
+									"value": "https://img.spoonacular.com/recipes/636359-556x370.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/recetas/like",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"recetas",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|mVl0thkefBkJtbhKI1ZzoVmWHQddiZ7fsNGypDGP29bb83c3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/recetas/eliminar_like/1",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"recetas",
+								"eliminar_like",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Likes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|mVl0thkefBkJtbhKI1ZzoVmWHQddiZ7fsNGypDGP29bb83c3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/recetas/likes",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"recetas",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recetas",
+			"item": [
+				{
+					"name": "Listar Recetas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|mVl0thkefBkJtbhKI1ZzoVmWHQddiZ7fsNGypDGP29bb83c3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Key",
+								"value": "Accept",
+								"type": "text"
+							},
+							{
+								"key": "Value",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL_Laragon}}/api/recetas/random",
+							"host": [
+								"{{URL_Laragon}}"
+							],
+							"path": [
+								"api",
+								"recetas",
+								"random"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
