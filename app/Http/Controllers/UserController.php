@@ -109,6 +109,8 @@ class UserController extends Controller
             'usuario' => [
                 'id' => $usuario->id,
                 'nombre' => $usuario->nombre,
+                'apellido' => $usuario->apellido,
+                'correo' => $usuario->correo,
                 'token' => $token,
                 ]
             ], 200);
